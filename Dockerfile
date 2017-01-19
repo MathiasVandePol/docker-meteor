@@ -18,7 +18,7 @@ ONBUILD RUN apt-get update -q -q && \
  cd /build && \
  meteor list && \
  if [ -f package.json ]; then meteor npm install --production; fi && \
- meteor build --headless . && \
+ meteor build --headless --server-only . && \
  cd / && \
  tar xf /build/build.tar.gz && \
  rm -rf /build && \
